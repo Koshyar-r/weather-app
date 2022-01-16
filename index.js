@@ -1,16 +1,42 @@
-
-
-const apiKey = "3396ed7b89e138f7899a7a6fab93ac03"
-
-function GetWeather(city) {
-    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
-
-    fetch(api)
-    .then(function(response) {
-        let data = response.json()
-        return data
-    })
+let weather = {
+    apiKey: "3396ed7b89e138f7899a7a6fab93ac03",
+    fetchWeather: function(city) {
+        fetch(
+            "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey
+        )
+        .then((response) => response.json())
+        .then((data) => this.displayWeather(data))
+    },
+    displayWeather: function(data) {
+        const {name} = data
+        const {icon, description} = data.weather[0]
+        const {temp, humidity} = data.main
+        const {speed} = data.wind
+        const {country} = data.sys
+        document.querySelector(".title").innerText = "Weather in " + name
+        document.querySelector(".weather__icon").src = "https://openweathermap.org/img/wn/"+ icon +"@4x.png"
+        document.querySelector(".temp__value").innerText = temp + "°C"
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
+        document.querySelector(".wind__speed").innerText = "Wind speed: " + speed + " km/h"
+        document.querySelector(".temp__description").innerText = description
+        document.querySelector(".location").innerText = name
+        document.querySelector(".country").innerText = country
+    },
+    search: function() {
+        this.fetchWeather(document.querySelector(".search__bar").value)
+    }
 }
+
+document.querySelector(".search__input i").addEventListener("click", function() {
+    weather.search()
+})
+
+document.querySelector(".search__bar").addEventListener("keyup", function(event) {
+    if(event.key == "Enter") {
+        weather.search()
+    }
+})
+
 
 let suggestions = [
     "Los Angeles, United States",
@@ -69,7 +95,22 @@ let suggestions = [
     "Johannesburg, South Africa",
     "Oslo, Norway",
     "Zurich, Switzerland",
-    "Lugano, Switzerland"
+    "Lugano, Switzerland",
+    "Glasgow, Scotland",
+    "Edinburgh, Scotland",
+    "Dundee, Scotland",
+    "Herning, Denmark",
+    "Copenhagen, Denmark",
+    "Aarhus, Denmark",
+    "Reykjavik, Iceland",
+    "Hafnarfjörður, Iceland",
+    "Akureyri, Iceland",
+    "Amsterdam, Netherlands",
+    "Rotterdam, Netherlands",
+    "Utrecht, Netherlands",
+    "Viena, Austria",
+    "Salzburg, Austria",
+    "Innsbruck, Austria"
 ]
 
 const searchInput = document.querySelector(".search__input")

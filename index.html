@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Weather App</title>
 </head>
@@ -14,17 +14,18 @@
     
     <div class="container">
         <div class="title"></div>
-        <div class="weather__icon"><img src="images/imgs/sunny.png" alt="img" draggable="false"></div>
+        <img src="" class="weather__icon" draggable="false">
         <div class="temp__value"><p>- °<span>C</span></p></div>
+        <div class="humidity"><p></p></div>
+        <div class="wind__speed"><p></p></div>
         <div class="temp__description"><p> - </p></div>
         <div class="location"><p>-</p></div>
+        <div class="country">-</div>
     </div>
     
     
-    
-    
     <div class="search__input">
-        <input type="text" placeholder="Search cities...">
+        <input type="text" class="search__bar" placeholder="Search cities...">
         <div class="autosuggest__box">
             <li>Los Angeles, United States</li>
             <li>New York, United States</li>
@@ -88,6 +89,6 @@
             <i class="uil uil-search"></i>
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </body>
 </html>
