@@ -4,19 +4,59 @@
     font-family: 'Poppins', sans-serif;
 }
 ::selection {
-    background: #000;
+    background: #000000;
     color: #FFF;
 }
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #12545c;
+}
+body.active {
+    background: #5AC8F9;
+    color: #000;
 }
 img {
     user-select: none;
+    width: 50%;
+}
+.toggle {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: 80px;
+    height: 30px;
+    border-radius: 100px;
+    transition: 0.5s;
+    background: #155b66;
+    box-shadow:  20px 20px 60px #0a353b, -20px -20px 60px #0e474f;
+    cursor: pointer;
+}
+.toggle .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    font-size: 20px;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+.toggle .circle i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle.active .circle {
+    left: 50px;
 }
 .search__input {
     position: relative;
+    top: 20rem;
     background: #FFF;
     max-width: 450px;
     border-radius: 5px;
@@ -31,7 +71,12 @@ img {
     border-radius: 5px;
     padding: 0 60px 0 20px;
     font-size: 16px;
-    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.1);
+    background: #145f69;
+    color: #FFF;
+}
+.search__input input::placeholder {
+    color: #FFF;
 }
 .search__input .icon {
     height: 55px;
@@ -42,7 +87,7 @@ img {
     right: 0;
     text-align: center;
     font-size: 22px;
-    color: #000;
+    color: #FFF;
     cursor: pointer;
 }
 .search__input .autosuggest__box {
@@ -69,5 +114,84 @@ img {
     display: block;
 }
 .autosuggest__box li:hover {
-    background: #efefef;
+    background: #e5e5e5;
+}
+.container {
+    border-radius: 50px;
+    background: #0C3E45;
+    box-shadow:  20px 20px 60px #0a353b, -20px -20px 60px #0e474f;
+    color: #FFF;
+    width: 22rem;
+    height: 35rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.container.active, .toggle.active{
+    border-radius: 50px;
+    background: #50c1f1;
+    box-shadow:  20px 20px 60px #3ab2e6, -20px -20px 60px #40bdf3;
+}
+.icon {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    cursor: pointer;
+    font-size: 21px;
+}
+.top__elements {
+    padding-top: 3rem;
+}
+.title {
+    font-size: 1.1rem;
+    margin-left: 2.6rem;
+}
+.map__icon {
+    font-size: 21px;
+    position: absolute;
+    left: 10px;
+}
+.angle__icon {
+    margin-left: 10px;
+    font-size: 21px;
+}
+.weather__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -11px;
+}
+.temp__value {
+    text-align: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: relative;
+    top: -2rem;
+}
+.temp__description {
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: -2rem;
+}
+/*.country {
+    background: #145f69;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+}*/
+.humidity.active, .title.active, 
+.temp__value.active, .wind__speed.active, 
+.temp__description.active, .country.active {
+    color: #000;
+}
+.information {
+    font-size: 18px;
 }

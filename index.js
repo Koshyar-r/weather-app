@@ -1,3 +1,26 @@
+const toggle = document.querySelector(".toggle")
+const body = document.querySelector("body")
+const container = document.querySelector(".container")
+const Title = document.querySelector(".title")
+const tempValue = document.querySelector(".temp__value")
+const Humidity = document.querySelector(".humidity")
+const WindSpeed = document.querySelector(".wind__speed")
+const TempDescription = document.querySelector(".temp__description")
+const Country = document.querySelector(".country")
+const WeatherIcon = document.querySelector(".weather__icon")
+toggle.onclick = function() {
+    toggle.classList.toggle('active')
+    body.classList.toggle('active')
+    container.classList.toggle('active')
+    Title.classList.toggle('active')
+    tempValue.classList.toggle('active')
+    Humidity.classList.toggle('active')
+    WindSpeed.classList.toggle('active')
+    TempDescription.classList.toggle('active')
+    Country.classList.add('active')
+    
+}
+
 let weather = {
     apiKey: "3396ed7b89e138f7899a7a6fab93ac03",
     fetchWeather: function(city) {
@@ -13,14 +36,14 @@ let weather = {
         const {temp, humidity} = data.main
         const {speed} = data.wind
         const {country} = data.sys
-        document.querySelector(".title").innerText = "Weather in " + name
-        document.querySelector(".weather__icon").src = "https://openweathermap.org/img/wn/"+ icon +"@4x.png"
-        document.querySelector(".temp__value").innerText = temp + "°C"
-        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
-        document.querySelector(".wind__speed").innerText = "Wind speed: " + speed + " km/h"
-        document.querySelector(".temp__description").innerText = description
-        document.querySelector(".location").innerText = name
-        document.querySelector(".country").innerText = country
+        const {pressure} = data.main
+        Title.innerHTML = name
+        WeatherIcon.src = "https://openweathermap.org/img/wn/"+ icon +"@4x.png"
+        tempValue.innerText = temp + "°C"
+        Humidity.innerText = "Humidity: " + humidity + "%"
+        WindSpeed.innerHTML = `<i class="uil uil-wind"></i>` + "Wind speed: " + speed + " km/h"
+        TempDescription.innerText = description
+        Country.innerText = country
     },
     search: function() {
         this.fetchWeather(document.querySelector(".search__bar").value)
@@ -36,6 +59,7 @@ document.querySelector(".search__bar").addEventListener("keyup", function(event)
         weather.search()
     }
 })
+
 
 
 let suggestions = [
