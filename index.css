@@ -11,116 +11,60 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #12545c;
+    background: #46b6e6;
+    transition: 0.5s ease;
 }
 body.active {
-    background: #5AC8F9;
+    background: #12545c;
     color: #000;
+    transition: 0.5s ease;
 }
 img {
     user-select: none;
     width: 50%;
 }
-.toggle {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    display: block;
-    width: 80px;
-    height: 30px;
-    border-radius: 100px;
-    transition: 0.5s;
-    background: #155b66;
-    box-shadow:  20px 20px 60px #0a353b, -20px -20px 60px #0e474f;
-    cursor: pointer;
-}
-.toggle .circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background: #e5e5e5;
-    border-radius: 50%;
-    font-size: 20px;
-    transform: scale(0.9);
-    transition: 0.5s;
-}
-.toggle .circle i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.toggle.active .circle {
-    left: 50px;
-}
-.search__input {
-    position: relative;
-    top: 20rem;
-    background: #FFF;
-    max-width: 450px;
-    border-radius: 5px;
-    margin: 150px auto;
-    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.12);
-}
-.search__input input {
-    width: 100%;
-    height: 60px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 60px 0 20px;
-    font-size: 16px;
-    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.1);
-    background: #145f69;
-    color: #FFF;
-}
-.search__input input::placeholder {
-    color: #FFF;
-}
-.search__input .icon {
-    height: 55px;
-    width: 55px;
-    line-height: 55px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: center;
-    font-size: 22px;
-    color: #FFF;
-    cursor: pointer;
-}
-.search__input .autosuggest__box {
-    padding: 0;
-    max-height: 280px;
-    overflow-y: auto;
+.checkbox {
     opacity: 0;
-    pointer-events: none;
+    position: absolute;
 }
-.search__input.active .autosuggest__box {
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
+.checkbox:checked + .label .ball {
+    transform: translateX(32px);
 }
-.autosuggest__box li {
-    list-style: none;
-    padding: 8px 12px;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-    display: none;
+.label {
+    background: #26a1d6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 50px;
+    padding: 5px;
+    height: 26px;
+    width: 58px;
+    cursor: pointer;
 }
-.search__input.active .autosuggest__box li {
-    display: block;
+.label i {
+    color: #f6fa00;
 }
-.autosuggest__box li:hover {
-    background: #e5e5e5;
+.label.active {
+    background: #18747e;
+}
+.ball {
+    background: #FFF;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.2s linear;
 }
 .container {
     border-radius: 50px;
-    background: #0C3E45;
-    box-shadow:  20px 20px 60px #0a353b, -20px -20px 60px #0e474f;
-    color: #FFF;
+    background: #50c1f1;
+    box-shadow:  20px 20px 60px #16b7fc, -20px -20px 60px #07b1fa;
+    color: #000;
     width: 22rem;
     height: 35rem;
     margin: 0;
@@ -130,12 +74,16 @@ img {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.container.active, .toggle.active{
+.container.active {
     border-radius: 50px;
-    background: #50c1f1;
-    box-shadow:  20px 20px 60px #3ab2e6, -20px -20px 60px #40bdf3;
+    background: #0C3E45;
+    box-shadow:  20px 20px 60px #0b606b, -20px -20px 60px #187f8d;
+    color: #FFF;
 }
-.icon {
+.container.active i {
+    color: #FFF;
+}
+.calender__icon {
     position: absolute;
     right: 1rem;
     top: 3rem;
@@ -163,35 +111,106 @@ img {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: -11px;
-}
-.temp__value {
-    text-align: center;
-    font-size: 2.5rem;
-    cursor: pointer;
-    position: relative;
-    top: -2rem;
 }
 .temp__description {
     letter-spacing: 1px;
     font-weight: bold;
     text-align: center;
     position: relative;
-    top: -2rem;
+    top: -30px;
 }
-/*.country {
-    background: #145f69;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+.temp__value {
     text-align: center;
-}*/
-.humidity.active, .title.active, 
-.temp__value.active, .wind__speed.active, 
-.temp__description.active, .country.active {
-    color: #000;
+    font-size: 2.8rem;
+    cursor: pointer;
+    position: relative;
+    top: -30px;
 }
 .information {
-    font-size: 18px;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    top: -30px;
+}
+.search__input {
+    position: absolute;
+    top: 15rem;
+    right: 2rem;
+    background: #19baff;
+    max-width: 450px;
+    border-radius: 5px;
+    margin: 150px auto;
+    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.12);
+}
+.search__input.active {
+    background: #07b1fa;
+}
+.search__input.active li:hover {
+    background: #0894cf;
+}
+.search__input input {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 16px;
+    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.1);
+    background: #40bdf3;
+    color: #000;
+}
+#input.active {
+    background: #0b454d;
+    color: #FFF;
+}
+#input.active::placeholder {
+    color: #FFF;
+}
+.search__input input::placeholder {
+    color: #000;
+}
+.search__input .icon {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #000;
+    cursor: pointer;
+}
+.search__input .autosuggest__box {
+    padding: 0;
+    max-height: 280px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+.search__input.active .autosuggest__box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.autosuggest__box li {
+    list-style: none;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+    display: none;
+}
+.autosuggest__box.active {
+    background: #03333a;
+}
+.autosuggest__box.active li:hover {
+    background: #12545c;
+}
+.search__input.active .autosuggest__box li {
+    display: block;
 }

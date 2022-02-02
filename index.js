@@ -1,4 +1,3 @@
-const toggle = document.querySelector(".toggle")
 const body = document.querySelector("body")
 const container = document.querySelector(".container")
 const Title = document.querySelector(".title")
@@ -6,10 +5,14 @@ const tempValue = document.querySelector(".temp__value")
 const Humidity = document.querySelector(".humidity")
 const WindSpeed = document.querySelector(".wind__speed")
 const TempDescription = document.querySelector(".temp__description")
-const Country = document.querySelector(".country")
 const WeatherIcon = document.querySelector(".weather__icon")
-toggle.onclick = function() {
-    toggle.classList.toggle('active')
+const label = document.querySelector(".label")
+const autoSuggest = document.querySelector(".autosuggest__box")
+
+const searchBar = document.getElementById("input")
+const checkbox = document.getElementById("checkbox")
+
+checkbox.addEventListener('change', () => {
     body.classList.toggle('active')
     container.classList.toggle('active')
     Title.classList.toggle('active')
@@ -17,9 +20,10 @@ toggle.onclick = function() {
     Humidity.classList.toggle('active')
     WindSpeed.classList.toggle('active')
     TempDescription.classList.toggle('active')
-    Country.classList.add('active')
-    
-}
+    label.classList.toggle('active')
+    searchBar.classList.toggle('active')
+    autoSuggest.classList.toggle('active')
+})
 
 let weather = {
     apiKey: "3396ed7b89e138f7899a7a6fab93ac03",
@@ -40,10 +44,9 @@ let weather = {
         Title.innerHTML = name
         WeatherIcon.src = "https://openweathermap.org/img/wn/"+ icon +"@4x.png"
         tempValue.innerText = temp + "°C"
-        Humidity.innerText = "Humidity: " + humidity + "%"
-        WindSpeed.innerHTML = `<i class="uil uil-wind"></i>` + "Wind speed: " + speed + " km/h"
+        Humidity.innerHTML = `<i class="uil uil-tear"></i>` + "  " + humidity + "%"
+        WindSpeed.innerHTML = `<i class="uil uil-wind"></i>` + "  " + speed + " km/h"
         TempDescription.innerText = description
-        Country.innerText = country
     },
     search: function() {
         this.fetchWeather(document.querySelector(".search__bar").value)
@@ -59,7 +62,6 @@ document.querySelector(".search__bar").addEventListener("keyup", function(event)
         weather.search()
     }
 })
-
 
 
 let suggestions = [

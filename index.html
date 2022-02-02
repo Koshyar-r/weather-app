@@ -13,111 +13,108 @@
 <body>
     
     
-    <div class="toggle">
-        <span class="circle">
+    <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
             <i class="uil uil-sun"></i>
-        </span>
+            <i class="uil uil-moon"></i>
+            <div class="ball"></div>
+        </label>
     </div>
 
 
     <div class="container">
-        <i class="uil uil-calendar-alt icon"></i>
+        <i class="uil uil-calendar-alt calender__icon"></i>
         <div class="top__elements"><i class="uil uil-map-marker map__icon"></i><span class="title">Location</span><i class="uil uil-angle-down angle__icon"></i></div>
-        <div class="country"></div>
         <img src="unknown.png" class="weather__icon" draggable="false">
         <div class="temp__description"><p> - </p></div>
         <div class="temp__value"><p>- °<span>C</span></p></div>
         <div class="information">
-            <div class="humidity"><p></p></div>
             <div class="wind__speed"><p></p></div>
+            <div class="humidity"><p></p></div>
+        </div>
+        <div class="search__input">
+            <input type="text" class="search__bar" placeholder="Search cities..." id="input">
+            <div class="autosuggest__box">
+                <li>Los Angeles, United States</li>
+                <li>New York, United States</li>
+                <li>Las Vegas, United States</li>
+                <li>Washington DC, United States</li>
+                <li>San Francisco, United States</li>
+                <li>Miami, United States</li>
+                <li>Compton, United States</li>
+                <li>Texas city, United States</li>
+                <li>Mahabad, Iran</li>
+                <li>Tehran, Iran</li>
+                <li>Urmia, Iran</li>
+                <li>Athens, Greece</li>
+                <li>Santorini, Greece</li>
+                <li>Yerevan, Armenia</li>
+                <li>Toronto, Canada</li>
+                <li>Vancouver, Canada</li>
+                <li>Montreal, Canada</li>
+                <li>Paris, France</li>
+                <li>Marseille, France</li>
+                <li>Lyon, France</li>
+                <li>Monaco</li>
+                <li>Dubai, United Arab Emirates</li>
+                <li>London, United Kingdom</li>
+                <li>Manchester, United Kingdom</li>
+                <li>Cambridge, United Kingdom</li>
+                <li>Norwich, United Kingdom</li>
+                <li>Rome, Italy</li>
+                <li>Turin, Italy</li>
+                <li>Venice, Italy</li>
+                <li>Milan, Italy</li>
+                <li>Madrid, Spain</li>
+                <li>Barcelona, Spain</li>
+                <li>Seville, Spain</li>
+                <li>Brussels, Belgium</li>
+                <li>Tel Aviv, Israel</li>
+                <li>Jerusalem, Israel</li>
+                <li>Haifa, Israel</li>
+                <li>Sydney, Australia</li>
+                <li>Melbourne, Australia</li>
+                <li>Rio De Janeiro, Brazil</li>
+                <li>São Paulo, Brazil</li>
+                <li>Mexico City, Mexico</li>
+                <li>Krakow, Poland</li>
+                <li>Stockholm, Sweden</li>
+                <li>Lisbon, Portugal</li>
+                <li>Porto, Portugal</li>
+                <li>Moscow, Russia</li>
+                <li>St. Petersburg, Russia</li>
+                <li>Helsinki, Finland</li>
+                <li>New Delhi, India</li>
+                <li>Kolkata, India</li>
+                <li>Mumbai, India</li>
+                <li>Berlin, Germany</li>
+                <li>Johannesburg, South Africa</li>
+                <li>Oslo, Norway</li>
+                <li>Zurich, Switzerland</li>
+                <li>Lugano, Switzerland</li>
+                <li>Glasgow, Scotland</li>
+                <li>Edinburgh, Scotland</li>
+                <li>Dundee, Scotland</li>
+                <li>Herning, Denmark</li>
+                <li>Copenhagen, Denmark</li>
+                <li>Aarhus, Denmark</li>
+                <li>Reykjavik, Iceland</li>
+                <li>Hafnarfjörður, Iceland</li>
+                <li>Akureyri, Iceland</li>
+                <li>Amsterdam, Netherlands</li>
+                <li>Rotterdam, Netherlands</li>
+                <li>Utrecht, Netherlands</li>
+                <li>Viena, Austria</li>
+                <li>Salzburg, Austria</li>
+                <li>Innsbruck, Austria</li>
+            </div>
+            <div class="icon">
+                <i class="uil uil-search"></i>
+            </div>
         </div> 
     </div>
     
     
-    <div class="search__input">
-        <input type="text" class="search__bar" placeholder="Search cities...">
-        <div class="autosuggest__box">
-            <li>Los Angeles, United States</li>
-            <li>New York, United States</li>
-            <li>Las Vegas, United States</li>
-            <li>Washington DC, United States</li>
-            <li>San Francisco, United States</li>
-            <li>Miami, United States</li>
-            <li>Compton, United States</li>
-            <li>Texas city, United States</li>
-            <li>Mahabad, Iran</li>
-            <li>Tehran, Iran</li>
-            <li>Urmia, Iran</li>
-            <li>Athens, Greece</li>
-            <li>Santorini, Greece</li>
-            <li>Yerevan, Armenia</li>
-            <li>Toronto, Canada</li>
-            <li>Vancouver, Canada</li>
-            <li>Montreal, Canada</li>
-            <li>Paris, France</li>
-            <li>Marseille, France</li>
-            <li>Lyon, France</li>
-            <li>Monaco</li>
-            <li>Dubai, United Arab Emirates</li>
-            <li>London, United Kingdom</li>
-            <li>Manchester, United Kingdom</li>
-            <li>Cambridge, United Kingdom</li>
-            <li>Norwich, United Kingdom</li>
-            <li>Rome, Italy</li>
-            <li>Turin, Italy</li>
-            <li>Venice, Italy</li>
-            <li>Milan, Italy</li>
-            <li>Madrid, Spain</li>
-            <li>Barcelona, Spain</li>
-            <li>Seville, Spain</li>
-            <li>Brussels, Belgium</li>
-            <li>Tel Aviv, Israel</li>
-            <li>Jerusalem, Israel</li>
-            <li>Haifa, Israel</li>
-            <li>Sydney, Australia</li>
-            <li>Melbourne, Australia</li>
-            <li>Rio De Janeiro, Brazil</li>
-            <li>São Paulo, Brazil</li>
-            <li>Mexico City, Mexico</li>
-            <li>Krakow, Poland</li>
-            <li>Stockholm, Sweden</li>
-            <li>Lisbon, Portugal</li>
-            <li>Porto, Portugal</li>
-            <li>Moscow, Russia</li>
-            <li>St. Petersburg, Russia</li>
-            <li>Helsinki, Finland</li>
-            <li>New Delhi, India</li>
-            <li>Kolkata, India</li>
-            <li>Mumbai, India</li>
-            <li>Berlin, Germany</li>
-            <li>Johannesburg, South Africa</li>
-            <li>Oslo, Norway</li>
-            <li>Zurich, Switzerland</li>
-            <li>Lugano, Switzerland</li>
-            <li>Glasgow, Scotland</li>
-            <li>Edinburgh, Scotland</li>
-            <li>Dundee, Scotland</li>
-            <li>Herning, Denmark</li>
-            <li>Copenhagen, Denmark</li>
-            <li>Aarhus, Denmark</li>
-            <li>Reykjavik, Iceland</li>
-            <li>Hafnarfjörður, Iceland</li>
-            <li>Akureyri, Iceland</li>
-            <li>Amsterdam, Netherlands</li>
-            <li>Rotterdam, Netherlands</li>
-            <li>Utrecht, Netherlands</li>
-            <li>Viena, Austria</li>
-            <li>Salzburg, Austria</li>
-            <li>Innsbruck, Austria</li>
-        </div>
-        <div class="icon">
-            <i class="uil uil-search"></i>
-        </div>
-    </div>
-
-
-    <!--<div class="made__by">
-        <p>Made by Koshyar-r </p>
-    </div>-->
 </body>
 </html>
