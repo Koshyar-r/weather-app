@@ -214,3 +214,14 @@ img {
 .search__input.active .autosuggest__box li {
     display: block;
 }
+@media (min-width: 320px) and (max-width: 480px) {
+    .container {
+        position: absolute;
+        top: 23rem;
+        width: 20rem;
+    }
+    .search__input {
+        position: absolute;
+        right: 1rem;
+    }
+}
