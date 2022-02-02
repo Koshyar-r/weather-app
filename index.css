@@ -223,7 +223,7 @@ img {
     }
     .search__input {
         position: absolute;
-        left: 4.5rem;
+        left: 5rem;
         width: 90%;
     }
 }
