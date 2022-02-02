@@ -221,5 +221,7 @@ img {
         left: 10rem;
         width: 20rem;
     }
-    
+    .search__input {
+        width: 110%;
+    }
 }
