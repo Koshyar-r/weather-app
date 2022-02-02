@@ -222,6 +222,7 @@ img {
         width: 20rem;
     }
     .search__input {
-        
+        position: absolute;
+        left: 50px;
     }
 }
